@@ -39,6 +39,7 @@ class EVF_Smart_Tags {
 				'user_id'         => esc_html__( 'User ID', 'everest-forms' ),
 				'user_name'       => esc_html__( 'User Name', 'everest-forms' ),
 				'user_email'      => esc_html__( 'User Email', 'everest-forms' ),
+				'display_name'    => esc_html__( 'User Displayname', 'everest-forms' ),
 				'referrer_url'    => esc_html__( 'Referrer URL', 'everest-forms' ),
 			)
 		);
@@ -166,6 +167,16 @@ class EVF_Smart_Tags {
 							$name = '';
 						}
 						$content = str_replace( '{' . $other_tag . '}', $name, $content );
+						break;
+
+					case 'display_name':
+						if ( is_user_logged_in() ) {
+							$user = wp_get_current_user();
+							$displayname = sanitize_text_field( $user->display_name );
+						} else {
+							$displayname = '';
+						}
+						$content = str_replace( '{' . $other_tag . '}', $displayname, $content );
 						break;
 
 					case 'referrer_url':
