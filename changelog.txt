@@ -1,8 +1,13 @@
 == Changelog ==
 
-= 1.7.3 - xx-xx-2020 =
+= 1.7.2.2 - 29-12-2020 =
+* Fix - Form builder not loading in Firefox.
+
+= 1.7.2.1 - 13-12-2020 =
 * Enhancement - Add copy shortcode button in form list table.
+* Fix - Form styles not being cloned on import and duplication.
 * Fix - AJAX submission conflict with stripe addon in multi-part form.
+* Fix - PerfectScrollbar jQuery selector issue in the form builder page.
 
 = 1.7.2 - 16-10-2020 =
 * Enhancement - Add search fields on builder page.
